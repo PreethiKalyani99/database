@@ -11,7 +11,7 @@ create table
         doctor_id int,
         appointment_date date,
         status varchar check (
-            lower(status in ('scheduled', 'completed', 'canceled'))
+            lower(status) in ('scheduled', 'completed', 'canceled')
         ),
         constraint fk_patient_id foreign key (patient_id) patients (patient_id),
         constraint fk_doctor_id foreign key (doctor_id) doctors (doctor_id)
